@@ -1,6 +1,7 @@
 # Prosjekt: Miljødataanalyse – generell del
 
-![PROJECT](../../resources/images/project.png)
+![PROJECT](../../resources/images/project.png) \
+Designed by [Freepik](https://www.freepik.com/)
 
 ## Målsetning
 
