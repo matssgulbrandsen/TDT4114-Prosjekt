@@ -1,6 +1,6 @@
 # Prosjekt: Miljødataanalyse – generell del
 
-![PROJECT](./resources/images/project.png)
+![PROJECT](../../resources/images/project.png)
 
 ## Målsetning
 
