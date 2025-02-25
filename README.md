@@ -15,6 +15,11 @@ Final project has to be delivered in Inspera for assessment. The grading scale i
 We do not recommend starting work on the project before week 6, as we might make changes to it. Until then, you can prepare yourself and focus on learning topics relevant to increasing your competency to deliver the project successfully.
 ```
 
+```{Note}
+Your final project solution should be submitted for assessment in Inspera. Please ensure that the virtual environment folder is NOT included in the zip file you upload. Only the requirements.txt file should be included. Additionally, make your central repository publicly accessible and share the link in Inspera.
+```
+
+
 ```{important}
 To access the project template, click <a href="https://jupyterhub.apps.stack.it.ntnu.no/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgit.ntnu.no%2FTDT4114%2Fproj_environment.git&#38;urlpath=lab%2Ftree%2Fproj_environment.git%2FREADME.md&#38;branch=main">here</a> to copy source files to Jupyter Hub (NTNU). And/Or clone/download from the GitHub repository: <a href="https://git.ntnu.no/TDT4114/proj_environment">https://git.ntnu.no/TDT4114/proj_environment</a>.
 ```
