@@ -11,7 +11,7 @@ I dette prosjektet skal dere utvikle en applikasjon som henter, analyserer og vi
 
 I dagens samfunn er det en økende bevissthet rundt miljøspørsmål, drevet av bekymringer om klimaendringer, forurensning og bærekraftig utvikling. For å kunne ta informerte beslutninger og utvikle effektive strategier for å håndtere disse utfordringene, er det avgjørende å ha tilgang til og forståelse av miljødata. Miljødata kan gi innsikt i en rekke faktorer, inkludert værmønstre, luftkvalitet, vannkvalitet og økosystemers helse. Ved å analysere disse dataene kan vi identifisere trender, forutsi fremtidige forhold og utvikle tiltak for å forbedre miljøet. For mer informasjon om dette kan en studere f.eks. [IPCC rapporter](https://www.ipcc.ch/reports/) som gir vurdering av klimaendringer og deres konsekvenser.
 
-Prosjektet med utvikling av en miljødataanalyseapplikasjon gir dere en unik mulighet til å jobbe med virkelige datasett fra åpne kilder, som meteorologiske institutter (f.eks. developer.yr.no) og miljøovervåkingsorganisasjoner (f.eks. https://www.eea.europa.eu/en/analysis). Dette gir ikke bare praktisk erfaring, men også en dypere forståelse av hvordan data kan brukes til å belyse komplekse miljøspørsmål. Gjennom prosjektet vil dere lære å navigere i ulike datakilder, vurdere datakvalitet og pålitelighet, samt anvende programmeringsferdigheter for å hente, bearbeide og analysere data.
+Prosjektet med utvikling av en miljødataanalyseapplikasjon gir dere en unik mulighet til å jobbe med virkelige datasett fra åpne kilder, som meteorologiske institutter (f.eks. developer.yr.no) og miljøovervåkingsorganisasjoner (f.eks. <https://www.eea.europa.eu/en/analysis>). Dette gir ikke bare praktisk erfaring, men også en dypere forståelse av hvordan data kan brukes til å belyse komplekse miljøspørsmål. Gjennom prosjektet vil dere lære å navigere i ulike datakilder, vurdere datakvalitet og pålitelighet, samt anvende programmeringsferdigheter for å hente, bearbeide og analysere data.
 
 I tillegg til å utvikle tekniske ferdigheter, vil prosjektet også fremme kritisk tenkning og problemløsning. Dere vil bli utfordret til å identifisere relevante datakilder, håndtere manglende verdier og uregelmessigheter i dataene, samt bruke statistiske metoder for å trekke meningsfulle konklusjoner. Dette er essensielle ferdigheter, spesielt i en tid der datadrevne beslutninger blir stadig mer sentrale i både offentlig og privat sektor.
 Videre vil prosjektet gi dere innsikt i viktigheten av versjonshåndtering og enhetstesting, som er kritiske komponenter i moderne programvareutvikling. Ved å bruke verktøy som Gitlab/GitHub for versjonering og unittest for testing, vil dere lære hvordan man sikrer kodekvalitet og samarbeider effektivt i team. Dette vil ikke bare heve deres tekniske kompetanse, men også forberede dere på kravene i arbeidsmarkedet, hvor samarbeid og kvalitetssikring er avgjørende.
@@ -20,7 +20,7 @@ Videre vil prosjektet gi dere innsikt i viktigheten av versjonshåndtering og en
 
 ### Enhetstesting
 
-Skrive enhetstester ved hjelp av unittest-rammeverket for å sikre at funksjonene i applikasjonen fungerer som forventet. Dere må utvikle enhetstester (både positive og negative) for den delen av koden som er kritisk, det vil si for den koden som er mest avgjørende for å oppfylle sentrale krav. 
+Skrive enhetstester ved hjelp av unittest-rammeverket for å sikre at funksjonene i applikasjonen fungerer som forventet. Dere må utvikle enhetstester (både positive og negative) for den delen av koden som er kritisk, det vil si for den koden som er mest avgjørende for å oppfylle sentrale krav.
 
 Sjekkpunkter:
 
@@ -30,7 +30,7 @@ Sjekkpunkter:
 
 ### Versjonshåndtering
 
-Bruke Git for å versjonere koden gjennom hele prosjektet, inkludert oppretting av grenene for forskjellige funksjoner og sammenslåing til hovedgrenen. 
+Bruke Git for å versjonere koden gjennom hele prosjektet, inkludert oppretting av grenene for forskjellige funksjoner og sammenslåing til hovedgrenen.
 
 Sjekkpunkter:
 
@@ -71,14 +71,14 @@ Ved prosjektets slutt får studentene en fungerende applikasjon som de leverer i
 ### Vurderingskriterier
 
 1. Kvaliteten på datainnsamlingen og forberedelsen:
-Vurderingen av datainnsamlingen vil fokusere på hvor godt dere har identifisert relevante og pålitelige åpne datakilder. Det vil også bli vurdert hvordan dere har implementert funksjonalitet for å hente data ved hjelp av Python-moduler, samt deres evne til å håndtere ulike datatyper som tekstfiler, CSV og JSON. Kvaliteten på databehandlingen, inkludert rensing og formatering av dataene, samt håndtering av manglende verdier og uregelmessigheter, vil også være sentral i vurderingen. 
+Vurderingen av datainnsamlingen vil fokusere på hvor godt dere har identifisert relevante og pålitelige åpne datakilder. Det vil også bli vurdert hvordan dere har implementert funksjonalitet for å hente data ved hjelp av Python-moduler, samt deres evne til å håndtere ulike datatyper som tekstfiler, CSV og JSON. Kvaliteten på databehandlingen, inkludert rensing og formatering av dataene, samt håndtering av manglende verdier og uregelmessigheter, vil også være sentral i vurderingen.
 
-    - Identifiserer relevante og pålitelige åpne datakilder
-    - Implementerer funksjonalitet for å hente data ved hjelp av Python-moduler
-    - Håndterer ulike datatyper som tekstfiler, CSV og JSON
-    - Sikre god kvalitet på databehandlingen, herunder:
-    - Renser og formatere dataene korrekt
-    - Håndterer manglende verdier og uregelmessigheter på en hensiktsmessig måte
+- Identifiserer relevante og pålitelige åpne datakilder
+- Implementerer funksjonalitet for å hente data ved hjelp av Python-moduler
+- Håndterer ulike datatyper som tekstfiler, CSV og JSON
+- Sikre god kvalitet på databehandlingen, herunder:
+- Renser og formatere dataene korrekt
+- Håndterer manglende verdier og uregelmessigheter på en hensiktsmessig måte
 
 2. Dyktighet i dataanalyse og bruk av statistiske metoder:
 
@@ -91,8 +91,7 @@ Beregner statistiske mål som:
 - Standardavvik
 
 3. Kvaliteten og klarheten i visualiseringene
-
-Vurderingen av visualiseringene vil fokusere på brukt av Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene. Kvaliteten på visualiseringene vil bli vurdert ut fra hvor godt dere kommuniserer informasjon, inkludert bruk av passende diagramtyper, fargevalg, aksetitler og legender. 
+Vurderingen av visualiseringene vil fokusere på brukt av Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene. Kvaliteten på visualiseringene vil bli vurdert ut fra hvor godt dere kommuniserer informasjon, inkludert bruk av passende diagramtyper, fargevalg, aksetitler og legender.
 
     - Bruker visualiseringsbiblioteker som Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene
     - Kvalitet på visualiseringene, herunder:
@@ -101,9 +100,7 @@ Vurderingen av visualiseringene vil fokusere på brukt av Matplotlib, Seaborn, P
         - Aksetitler
         - Legender
     - Klarhet i visualiseringene for å kommunisere informasjon på en informativ og lettfattelig måte for målgruppen
-
 4. Versjonskontroll
-
     - Lokalt/sentralt repo, commits og branching: 
         - Prosjektet har sentralt repo (GitHub/GitLab)
         - Fornuftig jevnlig innsjekking (commit) av endringer
@@ -117,18 +114,15 @@ Vurderingen av visualiseringene vil fokusere på brukt av Matplotlib, Seaborn, P
         - Har filtrert bort de fleste filer og mapper
         - Benytter .gitignore
         - Har opprettet README.md-fil som gir en kort beskrivelse av prosjektet, og info om hvordan bygge og kjøre applikasjonen
-
 5. Enhetstesting
     - Har gode beskrivende navn på testene
     - Har enhetstester for de viktigste funksjonene
     - Har helt greie negative tester (viser at kandidaten har forstått hovedpoenget med positive/negative tester)
-
 6. Filhåndtering
     - Leser fra tekstfil
     - Begrenset eller ingen sjekk/kontroll av filformat/struktur
     - Enkel håndtering av unntak
     - Skriver til tekstfil
     - Lukker filressurser på en trygg måte
-
 7. KI deklarasjon
 KI-deklarasjonen som finnes under `docs\ki` i dette repoet skal fylles ut og undertegnes av *hver* student i gruppen. Den skal leveres sammen med den endelige prosjektleveransen i Inspera.
