@@ -23,102 +23,112 @@ Videre vil prosjektet gi dere innsikt i viktigheten av versjonshåndtering og en
 Skrive enhetstester ved hjelp av unittest-rammeverket for å sikre at funksjonene i applikasjonen fungerer som forventet. Dere må utvikle enhetstester (både positive og negative) for den delen av koden som er kritisk, det vil si for den koden som er mest avgjørende for å oppfylle sentrale krav. 
 
 Sjekkpunkter:
--	Har enhetstestene beskrivende navn som dokumenterer hva testene gjør?
--	Tas det hensyn til både positive og negative tilfeller?
--	Er testdekningen god nok?
+
+- Har enhetstestene beskrivende navn som dokumenterer hva testene gjør?
+- Tas det hensyn til både positive og negative tilfeller?
+- Er testdekningen god nok?
 
 ### Versjonshåndtering
 
 Bruke Git for å versjonere koden gjennom hele prosjektet, inkludert oppretting av grenene for forskjellige funksjoner og sammenslåing til hovedgrenen. 
 
 Sjekkpunkter:
--	Er prosjektet underlagt versjonskontroll med sentral repro?
--	Sjekkes det inn jevnlig?
--	Beskriver commit-meldingene endringene på en kort og konsis måte?
+
+- Er prosjektet underlagt versjonskontroll med sentral repro?
+- Sjekkes det inn jevnlig?
+- Beskriver commit-meldingene endringene på en kort og konsis måte?
 
 ### Dokumentasjon
+
 Det er viktig at dere følger god praksis for dokumentasjon av kode og annen prosjektdokumentasjon, inkludert kildehenvisning. For å sikre at koden er lesbar og vedlikehold bar, anbefales det å følge standarder for kodestil, som f.eks. PEP 8 for Python eller Googles Python Style Guide, som gir retningslinjer for formatering, navngivning og strukturering av koden. Dette inkluderer bruk av beskrivende variabelnavn, riktig innrykk, og konsistent bruk av kommentarer for å forklare komplekse logiske trinn. Videre er det viktig å dokumentere kildene til dataene som benyttes i prosjektet, inkludert API-er og åpne datakilder, for å sikre transparens og etterprøvbarhet. Kildereferanser bør inkludere informasjon om kildeautoritet, datakvalitet og tilgjengelighet, og bør presenteres i en klar og konsistent form. Ved å følge disse retningslinjene vil dere ikke bare forbedre kvaliteten på prosjektet, men også utvikle ferdigheter som er essensielle for fremtidig arbeid.
 
 Sjekkpunkter:
--	Er all kode og annen prosjektdokumentasjon godt dokumentert, med tydelige forklaringer og kildereferanser?
--	Følger anbefalte standarder, som PEP 8 for Python for kodestil?
--	Dokumenterer hvor dataene kommer fra, inkludert API-er og åpne datakilder?
 
-### Verktøy og Biblioteker:
+- Er all kode og annen prosjektdokumentasjon godt dokumentert, med tydelige forklaringer og kildereferanser?
+- Følger anbefalte standarder, som PEP 8 for Python for kodestil?
+- Dokumenterer hvor dataene kommer fra, inkludert API-er og åpne datakilder?
 
--	Python
--	Jupyter Notebook
--	Pandas (for databehandling)
--	NumPy (for numeriske beregninger)
--	Matplotlib/Seaborn/Plotly (for visualisering)
--	Pandas SQL
+### Verktøy og Biblioteker
 
-### Tidsplan:
+- Python
+- Jupyter Notebook
+- Pandas (for databehandling)
+- NumPy (for numeriske beregninger)
+- Matplotlib/Seaborn/Plotly (for visualisering)
+- Pandas SQL
 
--	Uke 6-7: Oppsett av utviklingsmiljø og datainnsamling
--	Uke 8-11: Databehandling og analyse
--	Uke 12-14: Visualisering og prediktiv analyse
--	Uke 15: Testing og dokumentasjon
+### Tidsplan
 
-### Resultater:
+- Uke 6-7: Oppsett av utviklingsmiljø og datainnsamling
+- Uke 8-11: Databehandling og analyse
+- Uke 12-14: Visualisering og prediktiv analyse
+- Uke 15: Testing og dokumentasjon
+
+### Resultater
 
 Ved prosjektets slutt får studentene en fungerende applikasjon som de leverer i Inspera for vurdering. Dette prosjektet er designet for å styrke deres programmeringsferdigheter, forståelse av dataanalyse og samarbeidskompetanse gjennom praktisk anvendelse.
 
-### Vurderingskriterier:
+### Vurderingskriterier
 
 1. Kvaliteten på datainnsamlingen og forberedelsen:
 Vurderingen av datainnsamlingen vil fokusere på hvor godt dere har identifisert relevante og pålitelige åpne datakilder. Det vil også bli vurdert hvordan dere har implementert funksjonalitet for å hente data ved hjelp av Python-moduler, samt deres evne til å håndtere ulike datatyper som tekstfiler, CSV og JSON. Kvaliteten på databehandlingen, inkludert rensing og formatering av dataene, samt håndtering av manglende verdier og uregelmessigheter, vil også være sentral i vurderingen. 
 
--	Identifiserer relevante og pålitelige åpne datakilder
--	Implementerer funksjonalitet for å hente data ved hjelp av Python-moduler
--	Håndterer ulike datatyper som tekstfiler, CSV og JSON
--	Sikre god kvalitet på databehandlingen, herunder:
--	Renser og formatere dataene korrekt
--	Håndterer manglende verdier og uregelmessigheter på en hensiktsmessig måte
+    - Identifiserer relevante og pålitelige åpne datakilder
+    - Implementerer funksjonalitet for å hente data ved hjelp av Python-moduler
+    - Håndterer ulike datatyper som tekstfiler, CSV og JSON
+    - Sikre god kvalitet på databehandlingen, herunder:
+    - Renser og formatere dataene korrekt
+    - Håndterer manglende verdier og uregelmessigheter på en hensiktsmessig måte
 
 2. Dyktighet i dataanalyse og bruk av statistiske metoder:
 
 Dette kriteriet vurderer deres evne til å anvende NumPy og Pandas for å analysere dataene. Det vil bli sett på hvor godt dere kan beregne statistiske mål som gjennomsnitt, median og standardavvik. Anvender NumPy og Pandas for å analysere dataene.
 
 Beregner statistiske mål som:
--	Gjennomsnitt
--	Median
--	Standardavvik
 
-3. Kvaliteten og klarheten i visualiseringene:
+- Gjennomsnitt
+- Median
+- Standardavvik
+
+3. Kvaliteten og klarheten i visualiseringene
+
 Vurderingen av visualiseringene vil fokusere på brukt av Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene. Kvaliteten på visualiseringene vil bli vurdert ut fra hvor godt dere kommuniserer informasjon, inkludert bruk av passende diagramtyper, fargevalg, aksetitler og legender. 
 
--	Bruker visualiseringsbiblioteker som Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene
--	Kvalitet på visualiseringene, herunder:
-    -	Bruk av passende diagramtyper
-    -	Fargevalg
-    -	Aksetitler
-    -	Legender
--	Klarhet i visualiseringene for å kommunisere informasjon på en informativ og lettfattelig måte for målgruppen
+    - Bruker visualiseringsbiblioteker som Matplotlib, Seaborn, Plotly eller Bokeh for å presentere dataene
+    - Kvalitet på visualiseringene, herunder:
+        - Bruk av passende diagramtyper
+        - Fargevalg
+        - Aksetitler
+        - Legender
+    - Klarhet i visualiseringene for å kommunisere informasjon på en informativ og lettfattelig måte for målgruppen
 
-4.	Versjonskontroll
--	Lokalt/sentralt repo, commits og branching: 
-    -	Prosjektet har sentralt repo (GitHub/GitLab)
-    -	Fornuftig jevnlig innsjekking (commit) av endringer
-    -	Gode commit-meldinger som beskriver kort hvilke endringer som er gjort/hvilke problem som er løst
-    -	Har benyttet greiner som del av arbeidsflyt (f.eks. develop/main), for features/utprøving og liknende.
-    -	Har gjennomført merge mellom greiner
-    -	Har benyttet tags for å merke versjoner
+4. Versjonskontroll
 
--	Filer lagt til versjonskontroll
-    -	Benytter .gitignore
-    -	Har filtrert bort de fleste filer og mapper
-    -	Benytter .gitignore
-    -	Har opprettet README.md-fil som gir en kort beskrivelse av prosjektet, og info om hvordan bygge og kjøre applikasjonen
+    - Lokalt/sentralt repo, commits og branching: 
+        - Prosjektet har sentralt repo (GitHub/GitLab)
+        - Fornuftig jevnlig innsjekking (commit) av endringer
+        - Gode commit-meldinger som beskriver kort hvilke endringer som er gjort/hvilke problem som er løst
+        - Har benyttet greiner som del av arbeidsflyt (f.eks. develop/main), for features/utprøving og liknende.
+        - Har gjennomført merge mellom greiner
+        - Har benyttet tags for å merke versjoner
 
-5.	Enhetstesting
-    -	Har gode beskrivende navn på testene
-    -	Har enhetstester for de viktigste funksjonene
-    -	Har helt greie negative tester (viser at kandidaten har forstått hovedpoenget med positive/negative tester)
+    - Filer lagt til versjonskontroll
+        - Benytter .gitignore
+        - Har filtrert bort de fleste filer og mapper
+        - Benytter .gitignore
+        - Har opprettet README.md-fil som gir en kort beskrivelse av prosjektet, og info om hvordan bygge og kjøre applikasjonen
 
-6.	Filhåndtering
-    -	Leser fra tekstfil
-    -	Begrenset eller ingen sjekk/kontroll av filformat/struktur
-    -	Enkel håndtering av unntak
-    -	Skriver til tekstfil
-    -	Lukker filressurser på en trygg måte
+5. Enhetstesting
+    - Har gode beskrivende navn på testene
+    - Har enhetstester for de viktigste funksjonene
+    - Har helt greie negative tester (viser at kandidaten har forstått hovedpoenget med positive/negative tester)
+
+6. Filhåndtering
+    - Leser fra tekstfil
+    - Begrenset eller ingen sjekk/kontroll av filformat/struktur
+    - Enkel håndtering av unntak
+    - Skriver til tekstfil
+    - Lukker filressurser på en trygg måte
+
+7. KI deklarasjon
+KI-deklarasjonen som finnes under `docs\ki` i dette repoet skal fylles ut og undertegnes av *hver* student i gruppen. Den skal leveres sammen med den endelige prosjektleveransen i Inspera.
