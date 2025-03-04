@@ -8,21 +8,21 @@ I dette prosjektet skal dere gjennomføre oppgaver som fokuserer på oppsett av 
 
 Før dere begynner med datainnsamlingen, er det viktig å sette opp et utviklingsmiljø som vil støtte dere gjennom hele prosjektet. Denne oppgaven vil veilede dere i å opprette et prosjekt i GitHub, installere nødvendige verktøy og opprette en test Jupyter Notebook for å sikre at alt fungerer som det skal.
 
-1. Opprett et nytt «repository» på GitHub med et beskrivende navn for prosjektet (f.eks. "Miljødataanalyseapplikasjon").
+1. Opprett et nytt «repository» på GitHub med et beskrivende navn for prosjektet (f.eks. "Miljødataanalyseapplikasjon"). Det skal opprettes en sentral repo for prosjektgruppen.
 2. Last ned og installer den nyeste versjonen av Python fra den offisielle nettsiden (https://www.python.org/downloads/). Sørg for at Python er lagt til i systemets PATH under installasjonen.
 3. Last ned og installer Visual Studio Code fra den offisielle nettsiden (https://code.visualstudio.com/). Åpne VSCode og installer nødvendige utvidelser for Python og Jupyter. Dette kan gjøres ved å gå til Extensions (Ctrl+Shift+X) og søke etter "Python" og "Jupyter".
-4. Klon dette «repository»-et til din lokale maskin ved hjelp av Git (eller utviklingsverktøyet ditt).
+4. Klon [dette repoet](https://git.ntnu.no/TDT4114/proj_environment.git) til din lokale maskin ved hjelp av Git (eller utviklingsverktøyet ditt).
 5. I VSCode, opprett en ny Jupyter Notebook-fil (med filendelsen «.ipynb») i prosjektmappen. Skriv og kjør følgende kode i den første cellen for å teste at miljøet fungerer som det skal:
 
 ```Python
 print("Utviklingsmiljøet er klart!")
 ```
 
-NB! Du kan også bruke denne repoen som mal for ditt prosjekt.
+NB! Du kan også repoet som mal for ditt prosjekt.
 
 ### Oppgave 2: Datainnsamling
 
-I prosjektet for utvikling av en miljødataanalyseapplikasjon skal dere først identifisere relevante åpne datakilder, som API-er fra meteorologiske institutter og miljøovervåkingsorganisasjoner. Deretter skal dere implementere funksjonalitet for å hente data fra disse kildene ved hjelp av Python-moduler som requests. For å integrere dataene i applikasjonen, bruker dere teknikker som håndtering av tekstfiler, CSV-filer, JSON-data, samt fil- og katalogadministrasjon. I tillegg skal dere benytte dere av list comprehensions, iteratorer og Pandas SQL (sqldf) for å utforske og forstå dataenes struktur og innhold før de forberedes for videre analyse.
+I prosjektet for utvikling av en miljødataanalyseapplikasjon skal dere først identifisere relevante åpne datakilder, som f.eks. API-er fra meteorologiske institutter og miljøovervåkingsorganisasjoner. Deretter skal dere implementere funksjonalitet for å hente data fra disse kildene ved hjelp av Python-moduler (som eks. requests). For å integrere dataene i applikasjonen, bruker dere teknikker som håndtering av tekstfiler, CSV-filer, JSON-data, samt fil- og katalogadministrasjon. I tillegg skal dere benytte dere av list comprehensions, iteratorer og Pandas SQL (sqldf) for å utforske og forstå dataenes struktur og innhold før de forberedes for videre analyse.
 
 *Vurderingskriterier:*
 
