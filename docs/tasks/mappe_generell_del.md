@@ -34,7 +34,7 @@ Bruke Git for å versjonere koden gjennom hele prosjektet, inkludert oppretting 
 
 Sjekkpunkter:
 
-- Er prosjektet underlagt versjonskontroll med sentral repro?
+- Er prosjektet underlagt versjonskontroll med sentral repo?
 - Sjekkes det inn jevnlig?
 - Beskriver commit-meldingene endringene på en kort og konsis måte?
 
