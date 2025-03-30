@@ -1,3 +1,6 @@
+# Må leses
+** Oppgavene blir besvart i notebooks-folder, tilhørende data ligger i data_folder. OPpgaven ligger i docs og nødvendige bibloteker ligger i requirements.txt. Foldere som ikke er nevnt er nå ikke i bruk enda. **
+
 # Project
 
 The course has portfolio assessment which forms the basis for the grade in the subject. Portfolio assessment is based on the work you do in your project. The project should be solved in groups, and it is sufficient for one person in the group to submit the answer in Blackboard. When you have solved all the tasks, upload the entire answer as one zip file in BB. The zip file should contain the entire project directory, including all source code, .git directory, etc. It is important that you include the .git directory (an "invisible" directory in the root directory of your project) because it contains your version history. You will receive written feedback on what you have submitted in BB, and you can make improvements to the code right up until the final portfolio submission.

@@ -1,1 +1,2 @@
-Describes the notebooks directory
+Oppgave 1 er felles for alle temaene
+Oppgave 2-3 er med tilhørende fordypningsområde slikt at vi kan jobbe på dev_branches uten å få konflikter. Til inspera vurdering skal vi sammskrive notebook filene til 6 ulike filer med navn oppgave 1-6
