@@ -3,3 +3,11 @@ matplotlib
 pandas
 requests
 pandasql
+scipy
+seaborn
+plotly
+nbformat>=5.0.0
+ipython>=7.0.0
+nbformat>=4.2.0
+ipython
+ipywidgets
