@@ -11,3 +11,5 @@ ipython>=7.0.0
 nbformat>=4.2.0
 ipython
 ipywidgets
+scikit-learn
+
