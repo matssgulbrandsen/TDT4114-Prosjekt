@@ -5,3 +5,4 @@ requests
 pandasql
 netcdf4
 xarray
+scipy
