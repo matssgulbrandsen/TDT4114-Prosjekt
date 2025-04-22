@@ -6,3 +6,6 @@ pandasql
 netcdf4
 xarray
 scipy
+seaborn
+ipywidgets
+scikit-learn
