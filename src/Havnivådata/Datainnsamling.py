@@ -205,10 +205,12 @@ def last_ned_nasa_ssh_data(
 
         # 3. Lagrer i /data/
         project_root = Path(__file__).resolve().parents[2]
-        data_dir = project_root / "data"
-        data_dir.mkdir(exist_ok=True)
 
-        json_path = data_dir / filnavn
+        data_dir = project_root / "data" / "Havnivådata"
+        data_dir.mkdir(parents=True, exist_ok=True)
+
+        output_path = data_dir / "havnivaadata.json"
+        json_path = data_dir / "havnivaadata.json"
         df.to_json(json_path, orient="records", lines=True)
 
         print(f"✅ Data lagret i: {json_path}")
