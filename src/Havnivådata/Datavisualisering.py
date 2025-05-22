@@ -51,7 +51,7 @@ class Havnivaavisualisering:
         self.df["min_mm"] = self.df["min"] * 1000
         self.df["max_mm"] = self.df["max"] * 1000
 
-    def vis_linjediagram(self):
+    def vis_linjediagram(self, show=True):
         plt.figure(figsize=(12, 5))
         sns.lineplot(data=self.df, x="iso_time", y="mean_mm", color="blue")
         plt.title("Gjennomsnittlig havnivåstigning fra 1992 til 2025 (mm)")
@@ -59,9 +59,10 @@ class Havnivaavisualisering:
         plt.ylabel("Havnivåstigning i millimeter")
         plt.grid(True)
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
-    def vis_punktdiagram(self):
+    def vis_punktdiagram(self, show=True):
         df_mnd = self.df[["måned", "mean_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
         plt.figure(figsize=(12, 5))
@@ -71,9 +72,10 @@ class Havnivaavisualisering:
         plt.ylabel("Havnivåstigning i millimeter")
         plt.grid(True)
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
-    def vis_regresjon(self):
+    def vis_regresjon(self, show=True):
         df_mnd = self.df[["måned", "mean_mm", "min_mm", "max_mm"]].dropna()
         df_mnd["tid"] = df_mnd["måned"].dt.to_timestamp()
         df_mnd["årstall"] = df_mnd["tid"].dt.year + df_mnd["tid"].dt.month / 12
@@ -88,9 +90,10 @@ class Havnivaavisualisering:
         plt.grid(True)
         plt.legend()
         plt.tight_layout()
-        plt.show()        
+        if show:
+            plt.show()
 
-    def vis_min_punktdiagram(self, vis_regresjon=True):
+    def vis_min_punktdiagram(self, vis_regresjon=True, show=True):
         df_mnd = self.df[["måned", "min_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
         df_mnd["årstall"] = df_mnd["dato"].dt.year + df_mnd["dato"].dt.month / 12
@@ -108,9 +111,10 @@ class Havnivaavisualisering:
         plt.grid(True)
         plt.legend()
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
-    def vis_max_punktdiagram(self, vis_regresjon=True):
+    def vis_max_punktdiagram(self, vis_regresjon=True, show=True):
         df_mnd = self.df[["måned", "max_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
         df_mnd["årstall"] = df_mnd["dato"].dt.year + df_mnd["dato"].dt.month / 12
@@ -128,9 +132,10 @@ class Havnivaavisualisering:
         plt.grid(True)
         plt.legend()
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
-    def vis_glidende_gjennomsnitt(self):
+    def vis_glidende_gjennomsnitt(self, show=True):
         df_copy = self.df.copy()
         df_copy["glidende_mean"] = df_copy["mean_mm"].rolling(window=12, min_periods=1).mean()
         plt.figure(figsize=(12, 5))
@@ -142,9 +147,10 @@ class Havnivaavisualisering:
         plt.legend()
         plt.grid(True)
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
-    def vis_boksplott(self):
+    def vis_boksplott(self, show=True):
         plt.figure(figsize=(15, 6))
         self.df.boxplot(column="mean_mm", by="år", grid=True, showfliers=False)
         plt.title("Gjennomsnittlig havnivåstigning per år (1992–2025)")
@@ -153,7 +159,8 @@ class Havnivaavisualisering:
         plt.xticks(rotation=45)
         plt.ylabel("Havnivåstigning i millimeter")
         plt.tight_layout()
-        plt.show()
+        if show:
+            plt.show()
 
     def vis_interaktiv(self):
         df_årlig = self.df.groupby("år")["mean_mm"].mean().reset_index()
