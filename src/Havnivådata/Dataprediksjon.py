@@ -3,8 +3,10 @@ import pandas as pd
 from pathlib import Path
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
 import plotly.express as px
 import plotly.io as pio
+
 
 pio.renderers.default = "vscode"
 
@@ -48,22 +50,32 @@ class HavnivaaPrediksjon:
 
     def tren_modell(self):
         """
-        Trener lineær regresjonsmodell og beregner feilmål (MSE, R²).
-        Lager fremtidsdataframe med predikert havnivå.
+        Trener lineær regresjonsmodell på treningsdata og evaluerer ytelsen på testdata.
+
+        Vi deler datasettet i to: treningsdata (80 %) og testdata (20 %). Dette gjøres for å kunne evaluere
+        modellens evne til predikere data, ikke bare hvor godt den passer til det den er trent på.
         """
-        X = self.df[["år_decimal"]]  # behold feature names
+        X = self.df[["år_decimal"]]
         y = self.df["mean_mm"].values
 
-        self.model.fit(X, y)
-        y_pred = self.model.predict(X)
-        self.mse = mean_squared_error(y, y_pred)
-        self.r2 = r2_score(y, y_pred)
+        # Del datasettet i trenings- og testsett
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+        # Tren modellen på treningssettet
+        self.model.fit(X_train, y_train)
+
+        # Evaluer ytelse på testsettet
+        y_pred = self.model.predict(X_test)
+        self.mse = mean_squared_error(y_test, y_pred)
+        self.r2 = r2_score(y_test, y_pred)
+
+        # Lag fremtidsdata med prediksjoner
         framtid = pd.DataFrame({
             "år_decimal": np.arange(2025, self.slutt_år + 1, 1 / 12)
         })
         framtid["mean_mm_pred"] = self.model.predict(framtid[["år_decimal"]])
         self.framtid = framtid
+
 
     def vis_prediksjon(self):
         """
