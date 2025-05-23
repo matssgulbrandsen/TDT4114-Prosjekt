@@ -39,7 +39,11 @@ def beregn_albedo_statistikk(
             gjennomsnitt = median = std_avvik = float('nan')
 
         filnavn = os.path.basename(fil)
-        årstall = int(''.join(filter(str.isdigit, filnavn)))
+        årstall_str = ''.join(filter(str.isdigit, filnavn))
+        if årstall_str:
+            årstall = int(årstall_str)
+        else:
+            årstall = 0
 
         årstall_liste.append(årstall)
         gjennomsnitt_liste.append(float(gjennomsnitt))
