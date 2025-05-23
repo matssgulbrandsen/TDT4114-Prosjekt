@@ -130,7 +130,8 @@ def plot_albedo_heatmap_med_feilmargin(
 def statistikk_albedo(
     data_dir="../data/albedo_effekt_data/csv_albedo_effekt",
     datafiler_pattern="Albedo*.csv",
-    albedo_min=0.3
+    albedo_min=0.3,
+    print_matrise=True
 ):
     """
     Regner ut gjennomsnitt, median, std for AL-BB-DH > 0.3 for hvert år separat.
@@ -171,10 +172,11 @@ def statistikk_albedo(
     std = np.array(std_liste)[sortert_indeks]
     albedo_matrise = np.column_stack((årstall, gjennomsnitt, median, std))
 
-    print("\n📊 Statistikkmatrise (bare punkter > 0.3, for hvert år separat):")
-    print("[År, Gjennomsnitt, Median, Standardavvik]")
-    np.set_printoptions(suppress=True, precision=4)
-    print(albedo_matrise)
+    if print_matrise:
+        print("\n📊 Statistikkmatrise (bare punkter > 0.3, for hvert år separat):")
+        print("[År, Gjennomsnitt, Median, Standardavvik]")
+        np.set_printoptions(suppress=True, precision=4)
+        print(albedo_matrise)
 
     return albedo_matrise, årstall, gjennomsnitt, median, std
 
@@ -182,7 +184,8 @@ def albedo_statistikk_faste_2004_punkter(
     referansefil="../data/albedo_effekt_data/csv_albedo_effekt/Albedo effekt 2004.csv",
     feilmarginfil="../data/albedo_effekt_data/csv_albedo_effekt/data_m-lavfeilmargin.csv",
     datafiler_pattern="../data/albedo_effekt_data/csv_albedo_effekt/Albedo*.csv",
-    albedo_grense=0.3
+    albedo_grense=0.3,
+    print_matrise=True
 ):
     """
     Beregn og plott albedo-statistikk for hvert år,
@@ -234,11 +237,12 @@ def albedo_statistikk_faste_2004_punkter(
     std = np.array(std_liste)[sortert_indeks]
 
     albedo_matrise = np.column_stack((årstall, gjennomsnitt, median, std))
-    print(f"Gjennomsnittlig forskjell mellom median og gjennomsnitt {np.mean(np.abs(albedo_matrise[:,1] - albedo_matrise[:,2])):.4f}")
-    print("\n📊 Statistikkmatrise for faste snøpunkter:")
-    print("[År, Gjennomsnitt, Median, Standardavvik]")
-    np.set_printoptions(suppress=True, precision=4)
-    print(albedo_matrise)
+    if print_matrise:
+        print(f"Gjennomsnittlig forskjell mellom median og gjennomsnitt {np.mean(np.abs(albedo_matrise[:,1] - albedo_matrise[:,2])):.4f}")
+        print("\n📊 Statistikkmatrise for faste snøpunkter:")
+        print("[År, Gjennomsnitt, Median, Standardavvik]")
+        np.set_printoptions(suppress=True, precision=4)
+        print(albedo_matrise)
 
     return albedo_matrise, årstall, gjennomsnitt, median, std
 
