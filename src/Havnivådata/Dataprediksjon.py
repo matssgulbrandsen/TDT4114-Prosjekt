@@ -19,9 +19,7 @@ class HavnivaaPrediksjon:
     def __init__(self, slutt_år: int = 2100):
         """
         Initialiserer modellen og setter slutten for prediksjon.
-
-        Args:
-            slutt_år (int): Året det skal predikeres til.
+        slutt_år : Året det skal predikeres til.
         """
         self.slutt_år = slutt_år
         self.df = None
