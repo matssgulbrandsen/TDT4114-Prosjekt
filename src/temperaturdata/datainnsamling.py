@@ -5,24 +5,13 @@ from retry_requests import retry
 import os
 
 """
-Script for å hente timesoppløst historisk temperaturdata fra Open-Meteo Archive API.
 
-Funksjonalitet:
+Kode for å hente historisk temperaturdata fra Open-Meteo Archive API.
 - Bruker Open-Meteo sitt "archive" API til å laste ned timesdata for ønsket periode og posisjon (her: Trondheim, 1950 til 2025).
 - Robust mot nettverksfeil med caching og automatisk retry ved feil eller timeouts.
 - Transformerer de hentede dataene til et pandas DataFrame, med kolonnene 'date' (tidspunkt) og 'temperature_2m' (lufttemperatur 2 meter over bakken).
 - Skriver ut litt metadata (koordinater, tidssone, høyde) for å verifisere hentet område.
 - Lagrer ferdig behandlet data som CSV-fil i mappen ../data/temperaturdata/ (to nivå over denne filens plassering).
-
-Forutsetninger:
-- Krever installert: openmeteo_requests, requests_cache, retry_requests, pandas.
-- Scriptet bør kjøres fra src/temperaturdata/-mappa eller tilsv. struktur for at filstier skal stemme.
-
-Bruksområde:
-- Egner seg til automatisert uthenting og lagring av store mengder meteorologisk timesdata for videre analyse og rensing.
-
-Eksempel på utdata:
-- CSV-fil: 'data/temperaturdata/temperaturdata.csv' med alle timer fra 1950-01-01 til 2025-03-22.
 
 """
 
@@ -38,7 +27,7 @@ params = {
     "latitude": 63.43,
     "longitude": 10.39,
     "start_date": "1950-01-01",
-    "end_date": "2025-03-22",
+    "end_date": "2024-12-31",
     "hourly": "temperature_2m"
 }
 
