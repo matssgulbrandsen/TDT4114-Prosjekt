@@ -98,7 +98,6 @@ def albedo_behandling():
     """
 
     # Finn prosjektroten (der 'data' ligger)
-    # Fungerer både om du kjører fra notebook eller src
     cwd = os.getcwd()
     prosjektrot = cwd
     while not os.path.isdir(os.path.join(prosjektrot, "data")) and prosjektrot != os.path.dirname(prosjektrot):
@@ -126,20 +125,20 @@ def albedo_behandling():
         print(f"✅ Ferdig interpolert lavfeilmargin-fil finnes: {os.path.basename(komplett_file)} – hopper over prosessering.")
         return
 
-    # 1. Lag CSV-filene fra NetCDF (kun hvis det ikke finnes ferdige CSV-er)
+    # Lag CSV-filene fra NetCDF 
     if not glob.glob(os.path.join(csv_folder, "Albedo*csv")):
         print("🔄 Trekker ut CSV fra NetCDF...")
         trekk_ut_albedo_csv(y_min, y_max, x_min, x_max, start_aar, slutt_aar, ncdf_folder, csv_folder)
     else:
         print("✅ CSV-filer finnes fra før – hopper over ekstraksjon.")
 
-    # 2. Lag lavfeilmargin-fil hvis nødvendig
+    # Lag lavfeilmargin-fil hvis nødvendig
     if not os.path.exists(output_file):
         print("🔄 Lager lavfeilmargin-fil...")
         dann_lavfeilmargin_fil(csv_folder, aar_liste, output_file)
     else:
         print("✅ Lavfeilmargin-fil finnes – sjekker kvalitet/interpolasjon.")
 
-    # 3. Interpolasjon – kun om _komplett ikke finnes
+    # Interpolasjon – kun om _komplett ikke finnes
     print("🔍 Sjekker/utfører interpolasjon på lavfeilmargin-fil om nødvendig...")
     relevante_filer_interpolasjon(csv_folder,csv_folder_komplett)

@@ -61,13 +61,6 @@ class Visualisering:
     ):
         """
         Plotter et heatmap av albedo for et gitt år med punkter for lav feilmargin.
-        Parametre:
-            hovedfil:   Sti til hoveddatafil med albedo for et år.
-            feilmarginfil: Sti til fil med lav feilmargin.
-            figsize:    Tuple for figurstørrelse.
-            show_plot:  Om plt.show() skal kjøres automatisk.
-        Returnerer:
-            fig, ax
         """
         # Les inn data
         df_main  = pd.read_csv(hovedfil)
@@ -157,8 +150,6 @@ class Visualisering:
         Beregn og plott albedo-statistikk for hvert år,
         men kun for punkter som i 2004 som hadde høy albedo (> albedo_grense) og lav feilmargin.
         
-        Returnerer:
-            årstall, gjennomsnitt, median, std
         """
        
         plt.figure(figsize=(12, 6))
@@ -183,7 +174,7 @@ class Visualisering:
         albedo_data_pattern="../data/albedo_effekt_data/csv_albedo_effekt/Albedo*.csv"
     ):
         """
-        Returnerer DataFrame med [År, Gjennomsnittlig albedo] for kun faste snøpunkter fra 2004 med høy albedo og lav feilmargin.
+        Returnerer DataFrame/Stats med [År, Gjennomsnittlig albedo] for kun faste snøpunkter fra 2004 med høy albedo og lav feilmargin.
         """
         referanse_2004 = pd.read_csv(referansefil)
         feilmargin = pd.read_csv(feilmarginfil)
@@ -257,11 +248,7 @@ class Visualisering:
         Interaktivt heatmap for albedo per år, basert på CSV-filer for hvert år.
         Viser kun albedo (AL-BB-DH) – ingen filtrering på lav feilmargin.
 
-        Parametre:
-            data_pattern: glob pattern for å finne albedo-filer, én per år.
-            figsize: figurstørrelse for plot.
-
-        Bruk: plot_interaktiv_heatmap_albedo()
+        Bruker plot_interaktiv_heatmap_albedo()
         """
         # Hent alle relevante csv-filer
         filelist = sorted(glob.glob(data_pattern))
@@ -386,7 +373,7 @@ class Visualisering:
         # Kopi med 2013 og 2022 som manglende
         stats_missing = stats.copy()
         stats_missing.loc[stats_missing["År"].isin([2013, 2022]), "Gjennomsnittlig albedo"] = np.nan
-        # Interpolér bare de to årene
+        # interpolerer nye verdier
         stats_interp = stats_missing.copy()
         stats_interp["Gjennomsnittlig albedo"] = stats_interp["Gjennomsnittlig albedo"].interpolate(method="linear")
         
@@ -397,17 +384,14 @@ class Visualisering:
         model_interp.fit(X_interp, y_interp)
         trend_interp = model_interp.predict(X_interp)
 
-        # Ploter ekte datapunkter
+        # Ploter 
         plt.figure(figsize=(12, 6))
-        # Plotter alle originale datapunkter (unntatt 2013 og 2022, som blir NaN her)
         mask_ekte = ~stats["År"].isin([2013, 2022])
         plt.scatter(stats.loc[mask_ekte, "År"], stats.loc[mask_ekte, "Gjennomsnittlig albedo"],
                     color="blue", label="Ekte data", s=70, zorder=2)
-        # Plotter de to interpolerte punktene
         mask_interp = stats["År"].isin([2013, 2022])
         plt.scatter(stats_interp.loc[mask_interp, "År"], stats_interp.loc[mask_interp, "Gjennomsnittlig albedo"],
                     color="orange", label="Interpolert (2013/2022)", s=100, marker="s", zorder=3)
-        # Trendlinjer
         plt.plot(stats["År"], trend_full, '-', color="blue", label="Trendlinje (ekte)", zorder=1)
         plt.plot(stats_interp["År"], trend_interp, '--', color="orange", label="Trendlinje (interpolert)", zorder=1)
         plt.title("Effekt av interpolasjon av manglende verdier (kun 2013 og 2022)")

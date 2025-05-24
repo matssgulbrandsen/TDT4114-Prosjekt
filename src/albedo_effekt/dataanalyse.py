@@ -20,7 +20,7 @@ def beregn_albedo_statistikk(
     # Henter CSV-filene
     datafiler = sorted(glob.glob(datafiler_pattern)) # Filene sorteres etter årstall
 
-    # Lister for lagring
+    # Tomme lister
     årstall_liste = []
     gjennomsnitt_liste = []
     median_liste = []
@@ -111,7 +111,7 @@ def plot_albedo_heatmap_med_feilmargin(
     )
     plt.colorbar(im, ax=ax, label="Albedo (AL-BB-DH)")
 
-    # Prikker for lav feilmargin
+    # Scatter for lav feilmargin
     ax.scatter(
         df_error["lon"],
         df_error["lat"],
