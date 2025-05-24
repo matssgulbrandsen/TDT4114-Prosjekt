@@ -14,3 +14,6 @@ nbformat>=4.2.0
 ipython
 ipywidgets
 scikit-learn
+openmeteo_requests
+requests_cache
+retry_requests
