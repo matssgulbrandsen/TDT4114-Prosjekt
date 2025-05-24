@@ -38,11 +38,13 @@ class Havnivaavisualisering:
         vis_interaktiv()            - Viser en interaktiv graf for årlig gjennomsnittlig havnivåstigning.
         vis_meny()                  - Gir en interaktivt meny for valg av visualisering.
     """
+    # Leser inn og forbereder datasettet
     def __init__(self, filnavn="havnivaadata.json"):
         datafil = Path(__file__).resolve().parents[2] / "data" / "Havnivådata" / filnavn
         self.df = pd.read_json(datafil, lines=True)
         self._forbered_data()
 
+    # Lager nye kolonner og formatterer dato så den kan brukes til lettere visualiseringer
     def _forbered_data(self):
         self.df["iso_time"] = pd.to_datetime(self.df["iso_time"])
         self.df["år"] = self.df["iso_time"].dt.year
@@ -51,6 +53,7 @@ class Havnivaavisualisering:
         self.df["min_mm"] = self.df["min"] * 1000
         self.df["max_mm"] = self.df["max"] * 1000
 
+    # Viser linjediagram av gjennomsnittlig havnivå
     def vis_linjediagram(self, show=True):
         plt.figure(figsize=(12, 5))
         sns.lineplot(data=self.df, x="iso_time", y="mean_mm", color="blue")
@@ -62,6 +65,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser punktdiagram av gjennomsnittlig havnivå
     def vis_punktdiagram(self, show=True):
         df_mnd = self.df[["måned", "mean_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
@@ -75,6 +79,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser regresjonslinjer for min, maks og gjennomsnitt
     def vis_regresjon(self, show=True):
         df_mnd = self.df[["måned", "mean_mm", "min_mm", "max_mm"]].dropna()
         df_mnd["tid"] = df_mnd["måned"].dt.to_timestamp()
@@ -93,6 +98,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser minimumsmålinger med valgfri regresjonslinje
     def vis_min_punktdiagram(self, vis_regresjon=True, show=True):
         df_mnd = self.df[["måned", "min_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
@@ -114,6 +120,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser maksimumsmålinger med valgfri regresjonslinje
     def vis_max_punktdiagram(self, vis_regresjon=True, show=True):
         df_mnd = self.df[["måned", "max_mm"]].dropna()
         df_mnd["dato"] = df_mnd["måned"].dt.to_timestamp()
@@ -135,6 +142,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser glidende gjennomsnitt (12 måneder)
     def vis_glidende_gjennomsnitt(self, show=True):
         df_copy = self.df.copy()
         df_copy["glidende_mean"] = df_copy["mean_mm"].rolling(window=12, min_periods=1).mean()
@@ -150,6 +158,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser boksplott for hvert år
     def vis_boksplott(self, show=True):
         plt.figure(figsize=(15, 6))
         self.df.boxplot(column="mean_mm", by="år", grid=True, showfliers=False)
@@ -162,6 +171,7 @@ class Havnivaavisualisering:
         if show:
             plt.show()
 
+    # Viser interaktiv graf med årlig gjennomsnitt
     def vis_interaktiv(self):
         df_årlig = self.df.groupby("år")["mean_mm"].mean().reset_index()
         fig = px.line(
@@ -174,6 +184,7 @@ class Havnivaavisualisering:
         fig.update_layout(hovermode="x unified")
         fig.show()
 
+    # Lager nedtrekksmeny for å vise ulike grafer
     def vis_meny(self):
         output_tekst = widgets.Output()
 
@@ -201,6 +212,7 @@ class Havnivaavisualisering:
 
         knapp = widgets.Button(description="Vis graf")
 
+        # Funksjon for å håndtere knappetrykk og oppdatere grafen
         def vis_valg(b):
             output_tekst.clear_output()
             with output_tekst:

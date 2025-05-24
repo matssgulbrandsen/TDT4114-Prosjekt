@@ -9,10 +9,6 @@ def rens_manglende_verdier(
     """
     Identifiserer og håndterer manglende verdier (NaN) i en DataFrame med ulike strategier.
 
-    Parametre:
-        df (pd.DataFrame): DataFrame som skal sjekkes og renses for manglende verdier.
-        kolonner (list): Liste over kolonner som skal sjekkes (standard: alle numeriske kolonner).
-        metode (str): Metode for å håndtere manglende verdier. Følgende valg er mulig:
             - 'mean': Fyller inn manglende verdier med kolonnens gjennomsnitt.
             - 'median': Fyller inn manglende verdier med kolonnens median.
             - 'interpolate': Bruker lineær interpolasjon for å fylle inn mellomverdier (anbefalt for tidsserier).
@@ -22,10 +18,6 @@ def rens_manglende_verdier(
 
     Returnerer:
         pd.DataFrame: En kopi av DataFrame der manglende verdier er håndtert etter valgt metode.
-
-    Eksempel på bruk:
-        >>> # Fyll med interpolasjon (anbefalt for tidsserier)
-        >>> df_renset = rens_manglende_verdier(df, metode="interpolate")
 
     Kommentar:
         For tidsseriedata gir 'interpolate' eller 'ffill'/'bfill' ofte mer realistisk resultat enn globalt gjennomsnitt,
@@ -67,10 +59,10 @@ def demonstrer_rensing_av_manglende_verdier(
     random_state=42
 ):
     """
-    Demo-funksjon som:
+    Funksjon som:
       1) Legger til NaN i tilfeldige rader (og logger hvilke!),
       2) Skriver ut disse radene før rensing,
-      3) Renser datasettet med valgt metode,
+      3) Renser datasettet med bruk av rens_manglende_verdier,
       4) Skriver ut de samme radene etter rensing, hvis de finnes.
     """
     from Databehandling import rens_manglende_verdier
@@ -100,7 +92,7 @@ def demonstrer_rensing_av_manglende_verdier(
 
     print("\n--- Samme rader ETTER rensing ---")
     if metode == "drop":
-        # Sjekk hvilke rader som faktisk finnes igjen. Måtte legges til fordi vi kan printe noe som ikke finnes lengere.
+        # Sjekk hvilke rader som faktisk finnes igjen. Måtte legges til fordi vi kan printe noe som ikke finnes lengere (drop).
         beholdt = [i for i in sorted(rader_med_nan) if i in df_renset.index]
         fjernet = [i for i in sorted(rader_med_nan) if i not in df_renset.index]
         if beholdt:
@@ -119,12 +111,8 @@ def sett_usannsynlige_til_nan(df: pd.DataFrame, kolonnegrenser: dict) -> pd.Data
     Setter usannsynlige verdier (utenfor [min, max]) i gitte kolonner til NaN,
     men lar resten av raden være intakt.
 
-    Parametre:
-        df (pd.DataFrame): DataFrame å rense.
-        kolonnegrenser (dict): Kolonnenavn -> [min, max], f.eks. {"mean": [-0.5, 0.5]}.
-
     Returnerer:
-        pd.DataFrame: Ny DataFrame med usannsynlige verdier satt til NaN.
+        pd.DataFrame: Ny DataFrame hvor usannsynlige verdier satt til NaN.
     """
     df_renset = df.copy()
     for kol, (min_val, max_val) in kolonnegrenser.items():

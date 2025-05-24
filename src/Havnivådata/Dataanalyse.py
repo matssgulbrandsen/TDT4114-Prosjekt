@@ -10,9 +10,6 @@ def beregn_korrelasjon_mnd_vs_mean(datafil: str = "../../data/Havnivådata/havni
     Leser havnivådata fra JSON-fil, forbereder data og beregner Pearson-korrelasjon
     mellom måneder (tidsrekkefølge) og "mean" havnivå.
 
-    Parametre:
-        datafil (str): Relativ sti til JSON-fil med havnivådata.
-
     Returnerer:
         f: Pearson korrelasjonskoeffisient mellom måned og havnivå.
     """
@@ -46,9 +43,6 @@ def beregn_statistikk_numpy(datafil: str = "../../data/Havnivådata/havnivaadata
     Beregner gjennomsnitt, median og standardavvik for 'min', 'mean' og 'max'
     ved bruk av kun NumPy (ikke Pandas-statistikkmetoder).
 
-    Parametre:
-        datafil (str): Relativ sti til JSON-fil med havnivådata.
-
     Returnerer:
         dict: Resultater med statistiske mål per kolonne.
     """
@@ -60,7 +54,7 @@ def beregn_statistikk_numpy(datafil: str = "../../data/Havnivådata/havnivaadata
         resultater[kol] = {
             "gjennomsnitt": np.mean(verdier),
             "median": np.median(verdier),
-            "standardavvik": np.std(verdier, ddof=1)  # Sample std
+            "standardavvik": np.std(verdier, ddof=1) 
         }
 
     return resultater
@@ -72,15 +66,11 @@ def beskriv_statistikk(datafil: str = "../../data/Havnivådata/havnivaadata.json
     Bruker Pandas .describe() for å gi en statistisk oppsummering
     av kolonnene 'min', 'max' og 'mean' i havnivådatasettet.
 
-    Parametre:
-        datafil (str): Relativ sti til JSON-fil med havnivådata.
-
     Returnerer:
         pd.DataFrame: Tabell med beskrivende statistikk.
     """
     df = pd.read_json(datafil, orient="records", lines=True)
     return df[["min", "mean", "max"]].describe()
-
 
 
 def finn_mistenkelige_hopp(
