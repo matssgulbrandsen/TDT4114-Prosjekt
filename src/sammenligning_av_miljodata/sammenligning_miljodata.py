@@ -48,7 +48,7 @@ def plot_sammenligning_miljodata(
         "Albedo (gjennomsnitt)": gjennomsnitt
     })
 
-    # Sikre likt intervall 1992-2025, kun felles år
+    # Sikre likt intervall, kun felles år
     start_aar, slutt_aar = 1992, 2025
     for df in [temp_aar, hav_aar, albedo_aar]:
         df.drop(df[(df["år"] < start_aar) | (df["år"] > slutt_aar)].index, inplace=True)
@@ -134,7 +134,7 @@ def plot_sammenligning_miljodata(
                 yaxis3=dict(title="Albedo (gjennomsnitt)", color="green", anchor="free", overlaying="y", side="left", position=0.06)
             )
             fig.update_layout(
-                title="Årlig gjennomsnittlig temperatur, havnivå og albedo-effekt (1992–2025)",
+                title="Årlig gjennomsnittlig temperatur, havnivå og albedo-effekt (2004–2025)",
                 xaxis=dict(title="År"),
                 **axes,
                 legend=dict(x=0.01, y=0.99),
